@@ -5,7 +5,7 @@ function DisplayCounter(props) {
 
 
     return(
-        <div>
+        <div className = "Getit">
         <h3>Counter Display Component</h3>
         <h1>{props.ctr}</h1>
         </div>

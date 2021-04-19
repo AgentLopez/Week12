@@ -29,7 +29,7 @@ function Add (props) {
 
 
     return(
-        <div>
+        <div className = "Getit">
             <h3>Add/Subtract Component</h3>
             <h3>Currently: <h1>{method}</h1></h3> 
             <input type="text" name="value" onChange={changing} />

@@ -11,7 +11,7 @@ const down = () => {
 }
 
     return (
-        <div>
+        <div className = "Getit">
             <h3>Increments Component</h3>
             <button onClick={up}>+</button> <button onClick={down}>-</button>
         </div>

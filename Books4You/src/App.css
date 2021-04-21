@@ -1,5 +1,6 @@
 body {
   background-color: rgb(250, 228, 255);
+  width: 100%;
 }
 
 .twoColumn {
@@ -9,7 +10,11 @@ body {
 }
 
 .mainColumn {
-  width: 70%;
+  width: 75%;
+}
+
+.bookimage {
+  width: 100px;
 }
 
 .sideColumn {
@@ -23,7 +28,7 @@ body {
 
 .header {
   text-align: center;
-  width: 90%;
+  width: 100%;
   height: 125px
   }
 

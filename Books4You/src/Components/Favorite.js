@@ -1,4 +1,4 @@
-
+import * as actionCreator from '../action/actionCreators'
 import {connect} from 'react-redux'
 
 function Cart(props) {
@@ -27,13 +27,13 @@ const cartItems = books.map((book, index) => {
 
 const mapStateToProps = (state) => {
     return {
-        cart: state.fav
+        cart: state.favR.fav
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        removeFav: (item) => dispatch({type: 'REMOVE_FAV', payload: item})
+        removeFav: (item) => dispatch(actionCreator.removeFav(item))
     }
 }
 

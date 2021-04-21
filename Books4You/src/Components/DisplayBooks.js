@@ -1,6 +1,7 @@
 import { Component } from "react";
 import { connect } from 'react-redux'
 import {NavLink} from 'react-router-dom'
+import * as actionCreator from '../action/actionCreators'
 
 
 class DisplayBooks extends Component {
@@ -18,7 +19,7 @@ class DisplayBooks extends Component {
                 <p>{book.genre}</p>
                 <p>{book.publisher}</p>
                 <p>{book.year}</p>
-                <p><img className='image' src={book.imageURL} alt={book.title}/></p>
+                <p><img className='image' src={book.imageURL} alt={book.title} className='bookimage'/></p>
                
              
                 {this.props.loggedIn ? <button onClick={() => {this.props.onAddCart(book)}}>Add to Cart</button> : null}
@@ -47,14 +48,14 @@ class DisplayBooks extends Component {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        onAddCart: (book) => dispatch({type: "ADD_TO_CART", payload: book}),
-        onAddFav: (book) => dispatch({type: "ADD_TO_FAV", payload: book})
+        onAddCart: (book) => dispatch(actionCreator.addToCart(book)),
+        onAddFav: (book) => dispatch(actionCreator.addToFav(book))
     }
 }
 
 const mapStateToProps = (state) => {
     return {
-        loggedIn: state.loggedIn
+        loggedIn: state.authR.loggedIn
     }
 }
  

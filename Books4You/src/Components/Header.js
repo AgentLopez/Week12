@@ -26,8 +26,8 @@ class Header extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        ctr: state.ctr,
-        loggedIn: state.loggedIn
+        ctr: state.cartR.ctr,
+        loggedIn: state.authR.loggedIn
     }
 }
 

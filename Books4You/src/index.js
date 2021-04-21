@@ -4,17 +4,25 @@ import './index.css';
 import App from './Components/App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
-import { createStore } from 'redux'
-import reducer from './store/reducer'
+import { combineReducers, createStore } from 'redux'
+
 import { Provider } from 'react-redux'
 import Template from './Components/Template'
 import Login from './Components/Login';
 import Register from './Components/Register';
 import AddBook from './Components/AddBook';
 import EditBook from './Components/EditBook';
+import authReducer from './store/auth'
+import cartReducer from './store/cart'
+import favReducer from './store/fav'
 
+const rootReducer = combineReducers({
+  authR: authReducer,
+  cartR: cartReducer,
+  favR: favReducer
+})
 
-const store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
+const store = createStore(rootReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
 
 ReactDOM.render(
   <React.StrictMode>

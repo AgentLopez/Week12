@@ -1,4 +1,5 @@
-
+import * as actionTypes from '../action/actionTypes'
+import * as actionCreator from '../action/actionCreators'
 import {connect} from 'react-redux'
 
 function Cart(props) {
@@ -27,13 +28,13 @@ const cartItems = books.map((book, index) => {
 
 const mapStateToProps = (state) => {
     return {
-        cart: state.cart
+        cart: state.cartR.cart
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        removeItem: (item) => dispatch({type: 'REMOVE_ITEM', payload: item})
+        removeItem: (item) => dispatch(actionCreator.removeCartItem(item))
     }
 }
 

@@ -3,12 +3,20 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { createStore } from 'redux'
+import { combineReducers, createStore } from 'redux'
 import reducer from './store/reducer'
 import { Provider } from 'react-redux'
 
+import imageReducer from './store/picture'
+import mathReducer from './store/math'
 
-const store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
+const rootReducer = combineReducers({
+  pic: imageReducer,
+  math: mathReducer
+})
+
+
+const store = createStore(rootReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
 
 ReactDOM.render(
   <React.StrictMode>

@@ -15,8 +15,8 @@ function DisplayCounter(props) {
 
 const mapStateToProps = (state) => {
     return {
-        ctr: state.ctr,
-        name: state.name
+        ctr: state.math.ctr,
+        name: state.math.name
     }
 }
 

@@ -30,6 +30,7 @@ function Register(props) {
 
 
     return (
+<div className="books">
         <div>
             <h1>Register</h1>
             <br />
@@ -39,6 +40,7 @@ function Register(props) {
             <br />
             <button onClick={joinUs}>Register</button>
         </div>
+</div>
     )
 }
 

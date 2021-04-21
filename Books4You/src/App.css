@@ -2,6 +2,20 @@ body {
   background-color: rgb(250, 228, 255);
 }
 
+.twoColumn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.mainColumn {
+  width: 70%;
+}
+
+.sideColumn {
+  width: 25%;
+}
+
 .App {
   padding: 0px 20px 0px 0px;
   text-align: -webkit-center;
@@ -9,7 +23,8 @@ body {
 
 .header {
   text-align: center;
-  width: 90%
+  width: 90%;
+  height: 125px
   }
 
 .books {

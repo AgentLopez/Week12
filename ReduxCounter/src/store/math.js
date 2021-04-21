@@ -2,7 +2,6 @@
 const initialState = {
     ctr: 0,
     name: 'John Doe',
-    url: ''
 }
 
 const reducer = (state = initialState, action) => {
@@ -55,12 +54,6 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 ctr: state.ctr / action.value
             }
-        }
-    }
-    if (action.type === 'NEW_IMG') {
-        return {
-            ...state,
-            url: action.payload
         }
     }
 

@@ -21,7 +21,8 @@ class DisplayBooks extends Component {
                 <p><img className='image' src={book.imageURL} alt={book.title}/></p>
                
              
-                {this.props.loggedIn ? <button onClick={this.props.onAddCart}>Add to Cart</button> : null}
+                {this.props.loggedIn ? <button onClick={() => {this.props.onAddCart(book)}}>Add to Cart</button> : null}
+                {this.props.loggedIn ? <button onClick={() => {this.props.onAddFav(book)}}>Add to Favorite</button> : null}
 <br /><br />
                 {this.props.loggedIn ? <NavLink to = {editLink}>Edit This Book Listing</NavLink> : null}
 
@@ -46,7 +47,8 @@ class DisplayBooks extends Component {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        onAddCart: () => dispatch({type: "INCREMENT"})
+        onAddCart: (book) => dispatch({type: "ADD_TO_CART", payload: book}),
+        onAddFav: (book) => dispatch({type: "ADD_TO_FAV", payload: book})
     }
 }
 

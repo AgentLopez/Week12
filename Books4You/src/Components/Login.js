@@ -32,7 +32,8 @@ function Login(props) {
     }
 
     return (
-        <div>
+        <div className="books">
+            <div>
             <h2>Login</h2>
             <br />
             <input type="text" placeholder="User Name" onChange={onChange} name="userName" />
@@ -42,7 +43,7 @@ function Login(props) {
             <button onClick={clicky}>Login</button>
             <br />
             New? <NavLink to="/register">Register Here</NavLink>
-
+</div>
 
         </div>
     )
